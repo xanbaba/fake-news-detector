@@ -1,8 +1,11 @@
 import {type FormEvent, useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 import GoogleSignInButton from '../GoogleSignInButton'
 import {sendSignInLinkToEmail} from "@/services/authService.ts"
+import type {User} from "firebase/auth"
 
 export default function GetStartedForm() {
+    const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
@@ -57,9 +60,19 @@ export default function GetStartedForm() {
         )
     }
 
+    const handleGoogleSuccess = (user: User) => {
+        console.log('Google sign-in successful:', user)
+        navigate('/')
+    }
+
+    const handleGoogleError = (error: Error) => {
+        console.error('Google sign-in failed:', error)
+        setError(error.message)
+    }
+
     return (
         <form className="space-y-6" onSubmit={onSubmit}>
-            <GoogleSignInButton/>
+            <GoogleSignInButton onSuccess={handleGoogleSuccess} onError={handleGoogleError} />
 
             <div className="relative">
                 <div aria-hidden="true" className="absolute inset-0 flex items-center">

@@ -1,18 +1,21 @@
 import './GoogleSignInButton.css'
 import {signInWithGoogle} from "@/services/authService.ts"
+import type {User} from "firebase/auth"
 
-export default function GoogleSignInButton() {
+interface GoogleSignInButtonProps {
+    onSuccess?: (user: User) => void
+    onError?: (error: Error) => void
+}
+
+export default function GoogleSignInButton({ onSuccess, onError }: GoogleSignInButtonProps) {
     const handleGoogleSignIn = () => {
-        // TODO: Implement Firebase Google Sign-In
-        // 4. Sign in: signInWithGoogle() from authService
-        // 5. Handle success/error
-        // Documentation: https://firebase.google.com/docs/auth/web/google-signin
+        // Firebase Google Sign-In
         signInWithGoogle()
             .then(user => {
-                // TODO: Handle successful sign-in (e.g., redirect to dashboard)
+                onSuccess?.(user.user)
             })
             .catch(err => {
-                // TODO: Handle sign-in error (e.g., show error message)
+                onError?.(err)
             })
     }
 

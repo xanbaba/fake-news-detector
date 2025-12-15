@@ -31,3 +31,7 @@ const provider = new GoogleAuthProvider();
 export const signInWithGoogle = () => {
     return signInWithPopup(auth, provider)
 }
+
+export const signOutUser = () => {
+    return auth.signOut()
+}

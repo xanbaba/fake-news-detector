@@ -31,6 +31,7 @@ export default function CompleteSignIn() {
                 try {
                     await completeSignInWithEmailLink(email, verificationLink)
                     setStatus('success')
+                    navigate('/')
                 } catch (err) {
                     setStatus("error")
                     setErrorMessage(err instanceof Error ? err.message : 'Failed to complete sign-in')
