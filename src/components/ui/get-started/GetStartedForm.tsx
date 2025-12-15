@@ -27,7 +27,6 @@ export default function GetStartedForm() {
             setIsSubmitted(true)
             window.localStorage.setItem('emailForSignIn', email)
 
-            setError('TODO: Implement Firebase sendSignInLinkToEmail')
         } catch (err) {
             setError(err instanceof Error ? err.message : 'Failed to send verification email')
         } finally {

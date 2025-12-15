@@ -65,8 +65,6 @@ export default function UserProfileDropdown({ user, onOpenModal }: UserProfileDr
 
   const handleSignOut = () => {
     signOutUser().then(() => navigate('/'))
-    console.log('Sign out')
-    navigate('/')
   }
 
   const handleMenuItemClick = (section: AccountSection) => {
