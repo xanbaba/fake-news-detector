@@ -44,18 +44,18 @@ export default function CompleteSignIn() {
     }, [navigate, retryTrigger])
 
     return (
-        <div className="flex items-center justify-center py-8">
-            <div className="w-full max-w-md mx-auto p-4">
+        <div className="flex items-center justify-center py-4 sm:py-6 md:py-8">
+            <div className="w-full max-w-md mx-auto px-2 sm:px-4">
                 <AuthCard>
-                    <div className="text-center space-y-6">
+                    <div className="text-center space-y-4 sm:space-y-6">
                         {status === 'loading' && (
                             <>
                                 <div className="flex justify-center">
                                     <div
-                                        className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary"></div>
+                                        className="animate-spin rounded-full h-12 w-12 sm:h-16 sm:w-16 border-t-2 border-b-2 border-primary"></div>
                                 </div>
-                                <h2 className="text-white text-2xl font-bold">Completing sign-in...</h2>
-                                <p className="text-white/70">Please wait while we verify your email</p>
+                                <h2 className="text-white text-xl sm:text-2xl font-bold">Completing sign-in...</h2>
+                                <p className="text-white/70 text-sm sm:text-base">Please wait while we verify your email</p>
                             </>
                         )}
 
@@ -63,23 +63,23 @@ export default function CompleteSignIn() {
                             <>
                                 <div className="flex justify-center">
                                     <span
-                                        className="material-symbols-outlined text-green-500 text-6xl">check_circle</span>
+                                        className="material-symbols-outlined text-green-500 text-5xl sm:text-6xl">check_circle</span>
                                 </div>
-                                <h2 className="text-white text-2xl font-bold">Sign-in successful!</h2>
-                                <p className="text-white/70">Redirecting you to the app...</p>
+                                <h2 className="text-white text-xl sm:text-2xl font-bold">Sign-in successful!</h2>
+                                <p className="text-white/70 text-sm sm:text-base">Redirecting you to the app...</p>
                             </>
                         )}
 
                         {status === 'error' && (
                             <>
                                 <div className="flex justify-center">
-                                    <span className="material-symbols-outlined text-red-500 text-6xl">error</span>
+                                    <span className="material-symbols-outlined text-red-500 text-5xl sm:text-6xl">error</span>
                                 </div>
-                                <h2 className="text-white text-2xl font-bold">Sign-in failed</h2>
-                                <p className="text-white/70">{errorMessage}</p>
+                                <h2 className="text-white text-xl sm:text-2xl font-bold">Sign-in failed</h2>
+                                <p className="text-white/70 text-sm sm:text-base">{errorMessage}</p>
                                 <button
                                     onClick={() => navigate('/get-started')}
-                                    className="flex w-full justify-center rounded-xl bg-primary px-4 py-3 text-base font-bold text-white shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity"
+                                    className="flex w-full justify-center rounded-xl bg-primary px-4 py-2.5 sm:py-3 text-sm sm:text-base font-bold text-white shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity"
                                 >
                                     Try Again
                                 </button>
@@ -88,11 +88,11 @@ export default function CompleteSignIn() {
 
                         {status === 'promptEmail' && (
                             <>
-                                <h2 className="text-white text-2xl font-bold mb-4">Confirm your email</h2>
-                                <p className="text-white/70 mb-6">Please enter your email address to complete
+                                <h2 className="text-white text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Confirm your email</h2>
+                                <p className="text-white/70 text-sm sm:text-base mb-4 sm:mb-6">Please enter your email address to complete
                                     sign-in</p>
 
-                                <form className="space-y-6" onSubmit={(e) => {
+                                <form className="space-y-4 sm:space-y-6" onSubmit={(e) => {
                                     e.preventDefault()
                                     if (email.trim()) {
                                         window.localStorage.setItem('emailForSignIn', email)
@@ -101,13 +101,13 @@ export default function CompleteSignIn() {
                                     }
                                 }}>
                                     <div className="text-left">
-                                        <label className="text-white/80 text-sm font-medium" htmlFor="email">
+                                        <label className="text-white/80 text-xs sm:text-sm font-medium" htmlFor="email">
                                             Email Address
                                         </label>
-                                        <div className="mt-2 relative">
+                                        <div className="mt-1.5 sm:mt-2 relative">
                                             <span
                                                 className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600 z-1">
-                                                <span className="material-symbols-outlined !text-xl">mail</span>
+                                                <span className="material-symbols-outlined !text-lg sm:!text-xl">mail</span>
                                             </span>
                                             <input
                                                 id="email"
@@ -118,14 +118,14 @@ export default function CompleteSignIn() {
                                                 value={email}
                                                 onChange={(e) => setEmail(e.target.value)}
                                                 placeholder="you@example.com"
-                                                className="form-input w-full rounded-xl border-none input-glass-effect text-gray-600 placeholder:text-gray-400 py-3 pl-10 pr-4 focus:ring-2 focus:ring-inset focus:ring-primary transition-all"
+                                                className="form-input w-full rounded-xl border-none input-glass-effect text-gray-600 placeholder:text-gray-400 py-2.5 sm:py-3 pl-9 sm:pl-10 pr-4 text-sm sm:text-base focus:ring-2 focus:ring-inset focus:ring-primary transition-all"
                                             />
                                         </div>
                                     </div>
 
                                     <button
                                         type="submit"
-                                        className="flex w-full justify-center rounded-xl bg-primary px-4 py-3 text-base font-bold text-white shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary"
+                                        className="flex w-full justify-center rounded-xl bg-primary px-4 py-2.5 sm:py-3 text-sm sm:text-base font-bold text-white shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary"
                                     >
                                         Confirm
                                     </button>

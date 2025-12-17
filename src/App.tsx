@@ -8,8 +8,8 @@ function App() {
     <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
       <RootBackground />
       <div className="relative z-10 flex h-full grow flex-col">
-        <div className="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
-          <div className="flex flex-col max-w-[960px] flex-1">
+        <div className="px-3 sm:px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-3 sm:py-4 md:py-5">
+          <div className="flex flex-col max-w-[960px] flex-1 w-full">
             <Header />
             <main className="flex-grow">
               <PageView />

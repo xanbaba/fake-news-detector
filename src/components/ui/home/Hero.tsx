@@ -2,20 +2,20 @@ import Button from '../Button'
 
 export default function Hero() {
   return (
-    <section className="py-6 md:py-6 @container">
+    <section className="py-4 sm:py-6 @container">
       <div className="@[480px]:p-4">
-        <div className="flex min-h-[480px] flex-col gap-8 items-center justify-center p-4">
-          <div className="flex flex-col gap-4 text-center max-w-3xl items-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/20 px-4 py-1.5 text-sm text-white/90">
+        <div className="flex min-h-[320px] sm:min-h-[400px] md:min-h-[480px] flex-col gap-4 sm:gap-6 md:gap-8 items-center justify-center p-2 sm:p-4">
+          <div className="flex flex-col gap-3 sm:gap-4 text-center max-w-3xl items-center px-2">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/20 px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm text-white/90">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              Real-time Analysis Engine v2.1
+              <span className="whitespace-nowrap">Real-time Analysis Engine v2.1</span>
             </div>
 
             <div className={"typewriter"}>
-                <h1 className="text-white text-5xl font-black leading-tight tracking-tighter text-7xl">Unmask the Truth, Instantly.</h1>
+                <h1 className="text-white font-black leading-tight tracking-tighter text-2xl sm:text-4xl md:text-5xl lg:text-6xl">Unmask the Truth, Instantly.</h1>
             </div>
 
             <h2 className="text-white/80 text-base font-normal leading-relaxed @[480px]:text-xl max-w-2xl">

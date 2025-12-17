@@ -27,32 +27,32 @@ export default function PlanCard({
   ) : null
 
   return (
-    <div className={`flex flex-1 flex-col gap-6 rounded-xl ${border} bg-white/5 p-6 backdrop-blur-lg relative overflow-hidden`}>
+    <div className={`flex flex-1 flex-col gap-4 sm:gap-6 rounded-xl ${border} bg-white/5 p-4 sm:p-6 backdrop-blur-lg relative overflow-hidden`}>
       <div className="flex flex-col gap-2">
-        <div className="flex items-center justify-between">
-          <h3 className="text-primary text-base font-bold leading-tight">{title}</h3>
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="text-primary text-sm sm:text-base font-bold leading-tight">{title}</h3>
           {badge}
         </div>
         <p className="flex items-baseline gap-1 text-white">
           {price !== undefined ? (
             <>
-              <span className="text-4xl font-black leading-tight tracking-[-0.033em]">${String(price)}</span>
+              <span className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">${String(price)}</span>
               {priceSuffix ? (
-                <span className="text-base font-bold leading-tight">{priceSuffix}</span>
+                <span className="text-sm sm:text-base font-bold leading-tight">{priceSuffix}</span>
               ) : null}
             </>
           ) : (
-            <span className="text-4xl font-black leading-tight tracking-[-0.033em]">Custom</span>
+            <span className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Custom</span>
           )}
         </p>
       </div>
-      <Button variant={ctaVariant} className="rounded-lg">
+      <Button variant={ctaVariant} className="rounded-lg text-sm">
         {ctaLabel}
       </Button>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2 sm:gap-3">
         {features.map((text) => (
-          <div key={text} className="flex items-center gap-3 text-[13px] text-white/80">
-            <span className="material-symbols-outlined text-primary text-base">check_circle</span>
+          <div key={text} className="flex items-center gap-2 sm:gap-3 text-xs sm:text-[13px] text-white/80">
+            <span className="material-symbols-outlined text-primary text-sm sm:text-base flex-shrink-0">check_circle</span>
             {text}
           </div>
         ))}

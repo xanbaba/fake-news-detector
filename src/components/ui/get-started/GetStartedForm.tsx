@@ -36,22 +36,22 @@ export default function GetStartedForm() {
 
     if (isSubmitted) {
         return (
-            <div className="space-y-6 text-center">
-                <div className="rounded-xl bg-primary/10 border border-primary/30 p-6">
-                    <div className="flex justify-center mb-4">
-                        <span className="material-symbols-outlined text-primary text-5xl">mark_email_read</span>
+            <div className="space-y-4 sm:space-y-6 text-center">
+                <div className="rounded-xl bg-primary/10 border border-primary/30 p-4 sm:p-6">
+                    <div className="flex justify-center mb-3 sm:mb-4">
+                        <span className="material-symbols-outlined text-primary text-4xl sm:text-5xl">mark_email_read</span>
                     </div>
-                    <h3 className="text-white text-xl font-semibold mb-2">Check your email</h3>
-                    <p className="text-white/70 text-sm">
-                        We've sent a verification link to <span className="text-primary font-medium">{email}</span>
+                    <h3 className="text-white text-lg sm:text-xl font-semibold mb-2">Check your email</h3>
+                    <p className="text-white/70 text-xs sm:text-sm">
+                        We've sent a verification link to <span className="text-primary font-medium break-all">{email}</span>
                     </p>
-                    <p className="text-white/60 text-xs mt-3">
+                    <p className="text-white/60 text-xs mt-2 sm:mt-3">
                         Click the link in the email to complete your sign-in
                     </p>
                 </div>
                 <button
                     onClick={() => setIsSubmitted(false)}
-                    className="text-primary hover:text-white/80 text-sm font-medium transition-colors"
+                    className="text-primary hover:text-white/80 text-xs sm:text-sm font-medium transition-colors"
                 >
                     Use a different email
                 </button>
@@ -70,7 +70,7 @@ export default function GetStartedForm() {
     }
 
     return (
-        <form className="space-y-6" onSubmit={onSubmit}>
+        <form className="space-y-4 sm:space-y-6" onSubmit={onSubmit}>
             <GoogleSignInButton onSuccess={handleGoogleSuccess} onError={handleGoogleError} />
 
             <div className="relative">
@@ -78,17 +78,17 @@ export default function GetStartedForm() {
                     <div className="w-full border-t border-white/20"></div>
                 </div>
                 <div className="relative flex justify-center text-xs uppercase tracking-widest text-white/50">
-                    <span className="bg-background-dark/70 px-3">Or continue with email</span>
+                    <span className="bg-background-dark/70 px-2 sm:px-3">Or continue with email</span>
                 </div>
             </div>
 
             <div>
-                <label className="text-white/80 text-sm font-medium" htmlFor="email">
+                <label className="text-white/80 text-xs sm:text-sm font-medium" htmlFor="email">
                     Email Address
                 </label>
-                <div className="mt-2 relative">
+                <div className="mt-1.5 sm:mt-2 relative">
           <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600 z-1">
-            <span className="material-symbols-outlined !text-xl">mail</span>
+            <span className="material-symbols-outlined !text-lg sm:!text-xl">mail</span>
           </span>
                     <input
                         id="email"
@@ -99,14 +99,14 @@ export default function GetStartedForm() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="you@example.com"
-                        className="form-input w-full rounded-xl border-none input-glass-effect text-gray-600 placeholder:text-gray-400 py-3 pl-10 pr-4 focus:ring-2 focus:ring-inset focus:ring-primary transition-all"
+                        className="form-input w-full rounded-xl border-none input-glass-effect text-gray-600 placeholder:text-gray-400 py-2.5 sm:py-3 pl-9 sm:pl-10 pr-4 text-sm sm:text-base focus:ring-2 focus:ring-inset focus:ring-primary transition-all"
                     />
                 </div>
             </div>
 
             {error && (
-                <div className="rounded-xl bg-red-500/10 border border-red-500/30 p-3">
-                    <p className="text-red-400 text-sm">{error}</p>
+                <div className="rounded-xl bg-red-500/10 border border-red-500/30 p-2.5 sm:p-3">
+                    <p className="text-red-400 text-xs sm:text-sm">{error}</p>
                 </div>
             )}
 
@@ -114,13 +114,13 @@ export default function GetStartedForm() {
                 <button
                     type="submit"
                     disabled={isLoading}
-                    className="flex w-full justify-center rounded-xl bg-primary px-4 py-3 text-base font-bold text-white shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex w-full justify-center rounded-xl bg-primary px-4 py-2.5 sm:py-3 text-sm sm:text-base font-bold text-white shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     {isLoading ? 'Sending...' : 'Continue'}
                 </button>
             </div>
 
-            <p className="text-center text-white/60 text-xs">
+            <p className="text-center text-white/60 text-[10px] sm:text-xs">
                 By continuing, you agree to our Terms of Service and Privacy Policy
             </p>
         </form>

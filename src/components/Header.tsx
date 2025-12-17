@@ -12,22 +12,22 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex items-center justify-between whitespace-nowrap p-4 rounded-2xl glass-effect relative">
-        <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
-          <div className="absolute -top-1/2 -left-1/2 w-48 h-48 bg-white/10 rounded-full"></div>
+      <header className="flex items-center justify-between whitespace-nowrap p-3 sm:p-4 rounded-xl sm:rounded-2xl glass-effect relative">
+        <div className="absolute inset-0 rounded-xl sm:rounded-2xl overflow-hidden pointer-events-none">
+          <div className="absolute -top-1/2 -left-1/2 w-32 sm:w-48 h-32 sm:h-48 bg-white/10 rounded-full"></div>
         </div>
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 text-white relative z-10">
-          <div className="flex items-center justify-center size-8 bg-primary/20 rounded-lg border border-primary/50">
-            <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/><path d="m9 12 2 2 4-4"/></svg>
+        <Link to="/" className="flex items-center gap-2 sm:gap-3 text-white relative z-10">
+          <div className="flex items-center justify-center size-7 sm:size-8 bg-primary/20 rounded-lg border border-primary/50">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/><path d="m9 12 2 2 4-4"/></svg>
           </div>
-          <h2 className="text-white text-lg font-bold leading-tight tracking-[-0.015em]">TruthGuard AI</h2>
+          <h2 className="text-white text-base sm:text-lg font-bold leading-tight tracking-[-0.015em]">TruthGuard AI</h2>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex flex-1 justify-end gap-8 relative z-10">
-          <div className="flex items-center gap-9">
+        <div className="hidden md:flex flex-1 justify-end gap-4 lg:gap-8 relative z-10">
+          <div className="flex items-center gap-4 lg:gap-9">
             <Link className="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" to="/">Home</Link>
             <Link className="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" to="/pricing">Pricing</Link>
             <a className="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Features</a>
@@ -40,7 +40,7 @@ export default function Header() {
               ) : (
                 <Link
                   to="/get-started"
-                  className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity shadow-lg shadow-primary/30"
+                  className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 lg:px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity shadow-lg shadow-primary/30"
                 >
                   Get Started
                 </Link>
@@ -52,7 +52,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <div className="md:hidden relative z-10">
           <button
-            className="text-white flex"
+            className="text-white flex items-center justify-center min-h-[44px] min-w-[44px] rounded-lg hover:bg-white/5 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="material-symbols-outlined">
@@ -64,31 +64,31 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 glass-effect rounded-2xl overflow-hidden">
+        <div className="md:hidden mt-2 glass-effect rounded-xl sm:rounded-2xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col p-2">
             <Link
-              className="text-white text-sm font-medium px-4 py-3 hover:bg-white/5 rounded-lg transition-colors"
+              className="text-white text-sm font-medium px-4 py-3 hover:bg-white/5 rounded-lg transition-colors min-h-[44px] flex items-center"
               to="/"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link
-              className="text-white text-sm font-medium px-4 py-3 hover:bg-white/5 rounded-lg transition-colors"
+              className="text-white text-sm font-medium px-4 py-3 hover:bg-white/5 rounded-lg transition-colors min-h-[44px] flex items-center"
               to="/pricing"
               onClick={() => setMobileMenuOpen(false)}
             >
               Pricing
             </Link>
             <a
-              className="text-white text-sm font-medium px-4 py-3 hover:bg-white/5 rounded-lg transition-colors"
+              className="text-white text-sm font-medium px-4 py-3 hover:bg-white/5 rounded-lg transition-colors min-h-[44px] flex items-center"
               href="#"
               onClick={() => setMobileMenuOpen(false)}
             >
               Features
             </a>
             <a
-              className="text-white text-sm font-medium px-4 py-3 hover:bg-white/5 rounded-lg transition-colors"
+              className="text-white text-sm font-medium px-4 py-3 hover:bg-white/5 rounded-lg transition-colors min-h-[44px] flex items-center"
               href="#"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -104,7 +104,7 @@ export default function Header() {
                 ) : (
                   <Link
                     to="/get-started"
-                    className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity shadow-lg shadow-primary/30"
+                    className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity shadow-lg shadow-primary/30"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Get Started

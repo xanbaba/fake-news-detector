@@ -9,11 +9,11 @@ export default function PricingPage() {
   const proPrice = billing === 'monthly' ? 29 : 23
 
   return (
-    <section className="mt-16 md:mt-24 flex flex-col items-center gap-12 text-center">
+    <section className="mt-8 sm:mt-12 md:mt-16 lg:mt-24 flex flex-col items-center gap-6 sm:gap-8 md:gap-12 text-center">
       <PricingHeading />
       <BillingToggle value={billing} onChange={setBilling} />
 
-      <div className="grid w-full grid-cols-1 gap-6 px-4 py-3 text-left md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid w-full grid-cols-1 gap-4 sm:gap-5 md:gap-6 px-2 sm:px-4 py-2 sm:py-3 text-left sm:grid-cols-2 lg:grid-cols-3">
         <PlanCard
           title="Basic"
           price={0}
