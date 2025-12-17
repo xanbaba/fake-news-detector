@@ -17,7 +17,7 @@ export default function Footer() {
           <svg aria-hidden="true" className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10s-10 4.477-10 10c0 5.523 4.477 10 10 10s10-4.477 10-10zm-10 8c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm-1-5h-2v-3h2v-1.4c0-2.16 1.155-3.6 3.53-3.6h1.47v3h-1.021c-.88 0-1.054.56-1.054 1.125v.875h2.075l-.274 3h-1.801v5z"></path></svg>
         </a>
       </div>
-      <p className="text-white/70 text-xs sm:text-sm md:text-base font-normal leading-normal">© 2024 TruthGuard AI. All rights reserved.</p>
+      <p className="text-white/70 text-xs sm:text-sm md:text-base font-normal leading-normal">© 2025 TruthGuard AI. All rights reserved.</p>
     </footer>
   )
 }

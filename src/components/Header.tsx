@@ -30,8 +30,8 @@ export default function Header() {
           <div className="flex items-center gap-4 lg:gap-9">
             <Link className="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" to="/">Home</Link>
             <Link className="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" to="/pricing">Pricing</Link>
-            <a className="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Features</a>
-            <a className="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">About Us</a>
+            <Link className="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" to="/features">Features</Link>
+            <Link className="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" to="/about">About Us</Link>
           </div>
           <div className="flex gap-2 items-center">
             {!loading && (
@@ -80,20 +80,20 @@ export default function Header() {
             >
               Pricing
             </Link>
-            <a
+            <Link
               className="text-white text-sm font-medium px-4 py-3 hover:bg-white/5 rounded-lg transition-colors min-h-[44px] flex items-center"
-              href="#"
+              to="/features"
               onClick={() => setMobileMenuOpen(false)}
             >
               Features
-            </a>
-            <a
+            </Link>
+            <Link
               className="text-white text-sm font-medium px-4 py-3 hover:bg-white/5 rounded-lg transition-colors min-h-[44px] flex items-center"
-              href="#"
+              to="/about"
               onClick={() => setMobileMenuOpen(false)}
             >
               About Us
-            </a>
+            </Link>
 
             {!loading && (
               <div className="border-t border-white/10 mt-2 pt-2">
