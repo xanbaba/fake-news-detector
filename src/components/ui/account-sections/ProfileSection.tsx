@@ -17,7 +17,7 @@ export default function ProfileSection() {
                         <ProfileIcon isBig={true} />
                         <div className="text-center sm:text-left">
                             <h3 className="text-white text-base sm:text-lg font-semibold">
-                                {loading ? 'Loading...' : user?.displayName}
+                                {(loading ? 'Loading...' : user?.displayName) || (user?.email?.split('@')[0])}
                             </h3>
                             <p className="text-white/60 text-xs sm:text-sm">
                                 {loading ? 'Loading...' : user?.email}
@@ -31,7 +31,7 @@ export default function ProfileSection() {
                                 Name</label>
                             <input
                                 type="text"
-                                value={(loading ? 'Loading...' : user?.displayName) || 'Loading...'}
+                                value={(loading ? 'Loading...' : user?.displayName) || user?.email?.split('@')[0] || ''}
                                 className="w-full rounded-lg border border-white/20 bg-white/5 px-3 sm:px-4 py-2 text-sm sm:text-base text-white placeholder:text-white/40 focus:border-primary focus:ring-1 focus:ring-primary"
                                 readOnly
                             />
@@ -42,7 +42,7 @@ export default function ProfileSection() {
                                 className="text-white/80 text-xs sm:text-sm font-medium block mb-1.5 sm:mb-2">Email</label>
                             <input
                                 type="email"
-                                value={(loading ? 'Loading...' : user?.email) || 'Loading...'}
+                                value={(loading ? 'Loading...' : user?.email) || ''}
                                 className="w-full rounded-lg border border-white/20 bg-white/5 px-3 sm:px-4 py-2 text-sm sm:text-base text-white placeholder:text-white/40 focus:border-primary focus:ring-1 focus:ring-primary"
                                 readOnly
                             />
